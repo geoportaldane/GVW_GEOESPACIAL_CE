@@ -1,0 +1,416 @@
+.analysis__StepContainer{
+    margin: 0 10px;
+}
+.analysis__StepContainer__step{
+    &.--invisible{
+        display: none;
+    }
+}
+.analysis__StepContainer__step{
+    margin: 8px;
+
+}
+.analysis__step__title{
+    margin: 20px 0 0 0;
+    color: $gray4;
+}
+.analysis__step__text{
+    font-size: 0.9em;
+    margin: 8px 0;
+    color: $gray4;
+}
+.analysis__StepContainer__step__btnList{
+    margin:5px 0 0 0;
+    padding: 0;
+    list-style: none;
+    @include flex;
+    @include flex-wrap(wrap);
+
+}
+.analysis__StepContainer__step__btnList__item{
+    margin: 2px 8px 2px 0;
+    @include calc(width,'150px');
+}
+.analysis__StepContainer__btn{
+    width: 100%;
+    background: $white;
+    border:1px solid $gray5;
+    border-radius: 6px;
+    padding:6px 8px;
+    color: $gray4;
+    font-size: 0.9em;
+    @include transition(all ease-in-out 0.2s);
+    @include flex;
+    &:hover,
+    &.--active{
+        background: $sixColor;
+        border:1px solid $fifthColor;
+        color: $gray1;
+        .analysis__StepContainer__btn__icon{
+            color: $gray1;
+        }
+    }
+    &:focus{
+        outline: none;
+    }
+}
+.analysis__StepContainer__btn__icon{
+    font-size: 1.5em;
+    line-height:1;
+    color: $gray6;
+    @include transition(all ease-in-out 0.2s);
+}
+.analysis__boxDescription{
+    margin: 5px 0;
+    @include flex;
+    @include flex-wrap(wrap);
+    &.--invisible{
+        display: none;
+    }    
+}
+.analysis__boxDescription__icon{
+    width:50px;
+    font-size:2.8em;
+    text-align: center;
+    color:$sevenColor;
+}
+.analysis__boxDescription__text{
+    margin: 3px 0;
+    color: $gray4;
+    font-size: 0.9em;
+    @include calc(width,'100% - 50px');
+    &.--full{
+        @include calc(width,'100%');
+    }
+    &.--invisible{
+        display: none;
+    }
+}
+.analysis__boxDescription__text__bold{
+    font-weight: 600;
+}
+.analysis__SearchBox{
+    padding: 3px 5px;
+    margin: 0 0 10px 0;
+    background: $white;
+    border-radius: 5px;
+    border: 1px solid $gray12;
+    @include calc(width,'100% - 10px');
+    @include box-shadow(2px 2px 3px -1px $gray10);
+    @include flex;
+    @include flex-wrap(wrap);
+    @include transition(all ease-in-out 0.2s);
+    &.--erase{
+        .analysis__SearchBox__input{
+            @include calc(width,'100% - 58px');
+        }
+        .analysis__SearchBox__eraseSearch{
+            display: inherit;
+        }
+    }
+}
+.analysis__SearchBox__errorMessage{
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    font-size: 0.9em;
+    margin:0;
+    color:$sevenColor;
+    width: 100%;
+    word-wrap: break-word;
+    @include transition(all ease-in-out 0.2s);
+    &.--visible{
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        margin:3px 0;
+    }
+}
+.analysis__SearchBox__input{
+    border: none;
+    font-size: 0.9em;
+    height: 25px;
+    @include calc(width,'100% - 35px');
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+    &::placeholder{
+        color: $gray4;
+    }
+}
+.analysis__SearchBox__btn{
+    width:30px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    font-size: 1.5em;
+    color: $gray8;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        color:$gray4;
+        .DANE__Geovisor__icon__search{
+            @include transform(rotate(-5deg));
+        }
+    }
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+    .DANE__Geovisor__icon__search{
+        position: absolute;
+        top: 3px;
+        left: 0;
+        @include transition(all ease-in-out 0.2s);
+    }
+}
+.analysis__SearchBox__eraseSearch{
+    display: none;
+    width:18px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    &:hover{
+        &:after,
+        &:before{
+            @include transform(rotate(0deg));
+            background: $gray4;
+        }
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        top:18px;
+        left:0;
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(-45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        top:18px;
+        left:0;
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+}
+.analysis__list{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+.analysis__list__option{
+    @include flex;
+    @include flex-wrap(wrap);
+    &.--invisible{
+        display: none;
+    }
+}
+.analysis__slideTrans{
+    margin: 10px 0 20px;
+    width: 100%;
+    @include flex;
+}
+.analysis__slideTrans__scrollBar{
+    width: 80%;
+    height: 3px;
+    background: $gray5;
+    margin: 8px 2px;
+    position: relative;
+}
+.analysis__slideTrans__scrollBtn{
+    width: 6px;
+    padding: 0;
+    height: 15px;
+    background: $fifthColor;
+    border-radius: 4px;
+    border: none;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    &:hover{
+        background: $fourthColor;
+        height: 18px;
+        top: -8px;
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+}
+.analysis__slideTrans__textValue{
+    font-size: 0.9em;
+    font-weight: 900;
+    margin: 0 3px;
+    color: $gray4;
+}
+.analysis__btn_heatMap,
+.analysis__btn{
+    width: 100%;
+    background: $fourthColor;
+    border:1px solid $fifthColor;
+    border-radius: 8px;
+    padding: 8px 5px;
+    margin: 8px 0;
+    color:$gray1;
+    font-size: 0.9em;
+    @include flex;
+    @include justify-content(center);
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        background: $principalColor;
+        border-radius: 8px;
+        color: $gray1;
+        .analysis__btn__icon{
+            color: $gray1;
+        }
+    }
+}
+.analysis__btn__icon{
+    font-size: 1.5em;
+    line-height: 1;
+    color: $gray1;
+    margin: 0 3px;
+    @include transition(all ease-in-out 0.2s);
+}
+
+.tools__radioList__item{
+    position: relative;
+    margin: 5px 10px 5px 0;
+    cursor: pointer;
+    width: 100%;
+    @include flex;
+    &.--full{
+        width: 100%;
+    }
+    &.--invisible{
+        display: none;
+    }
+    &.--active{
+        .tools__radioList__item__radioBox{
+            background: $white;
+            border: 2px solid $principalColor;
+            &:before{
+                content: '';
+                position: absolute;
+                top: 3px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background: $principalColor;
+            }
+        }
+    }
+    &.--disabled{
+        pointer-events: none;
+        cursor: not-allowed;
+        text-decoration: none;
+        color: $gray6;
+        .tools__radioList__item__radioBox{
+            border: 2px solid $gray9;
+            cursor: not-allowed;            
+        }
+    }
+}
+.tools__radioList__item__radio{
+    opacity: 0;
+    z-index: 2;
+}
+.tools__radioList__item__radioBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border: 2px solid $gray8;
+    border-radius:100%;
+    @include transition(all ease-in-out 0.2s);
+}
+.tools__radioList__item__text{
+    font-size: 0.9em;
+    margin: 0 8px;
+    @include transition(all ease-in-out 0.2s);
+}
+
+/// --Modo oscuro
+
+html[data-theme="dark"] {
+    .analysis__SearchBox{
+        background: $blackboard4;
+        border:1px solid $blackboard4;
+        @include box-shadow(2px 2px 3px -1px $blackboard3);
+    }
+    .analysis__SearchBox__input{
+        background: transparent;
+        color: $white;
+        &::placeholder{
+            color: $white;
+        }
+    }
+    .analysis__SearchBox__btn{
+        color: $gray1;
+        &:hover{
+            color: $blackboardMagenta;
+        }
+    }
+    .analysis__btn{
+        background: $fourthColor;
+        &:hover{
+            background: $sevenColor;
+        }
+    }
+    .analysis__btn__name,
+    .analysis__btn__icon{
+        color: $white;
+    }
+    .analysis__boxDescription__text,
+    .analysis__slideTrans__textValue{
+        color: $gray1;
+        font-weight: 300;
+    }
+    .analysis__step__title{
+        color: $gray1;
+    }
+    .analysis__StepContainer__btn{
+        background: $blackboard;
+        border:1px solid $blackboard4;
+        color: $gray1;
+        @include box-shadow(2px 2px 3px -1px $blackboard3);
+        &.--active{
+            background: $sevenColor;
+            border:1px solid $sevenColor;
+            @include box-shadow(2px 2px 3px -1px $sixColor);
+        }
+        &:hover{
+            background: $magentaTransparency;
+            @include box-shadow(2px 2px 3px -1px $sixColor);
+        }
+    }
+    .analysis__StepContainer__btn__icon,
+    .analysis__StepContainer__btn__name{
+        color: $white;
+    }
+    .analysis__slideTrans__scrollBtn{
+        background: $blackboardMagenta;
+    }
+}
